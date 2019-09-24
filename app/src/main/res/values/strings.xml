@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Devip</string>
+        <string name="sign_in">Sign in</string>
+        <string name="login">Login</string>
+        <string name="register">Register</string>
+        <string name="confirm_password">Confirm Password</string>
+        <string name="password">Password</string>
+        <string name="mobile_number">Mobile Number</string>
+        <string name="email_address">Email Address</string>
+        <string name="name">Name</string>
+        <string name="log_out">Log out</string>
+        <string name="text">Text</string>
+        <string name="brief_info">Brief Info</string>
+        <string name="mobile">Mobile</string>
+        <string name="email">Email</string>
+        <string name="user_details">User Details</string>
+        <string name="dashboard">Dashboard</string>
+</resources>
