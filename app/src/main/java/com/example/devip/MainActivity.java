@@ -1,52 +1,54 @@
 package com.example.devip;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
-import static com.example.devip.R.id.log_btn_register;
-
 public class MainActivity extends AppCompatActivity {
-    private Editable textView;
-    private Button loginButton = findViewById(R.id.log_btn_login);
-    private Button ButtonRegister;
+    private Button loginButton;
+    private Button buttonRegister;
+    EditText emailEditText;
+    EditText passwordEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        emailEditText = findViewById(R.id.reg_et_email);
+        passwordEditText = findViewById(R.id.log_et_email);
+        loginButton = findViewById(R.id.log_btn_login);
+        //final Button btnRegister = findViewById(log_btn_register);
+
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent loginScreen = new Intent(MainActivity.this, Dashboardactivity.class);
-
                 startActivity(loginScreen);
             }
         });
 
-        ButtonRegister = findViewById(R.id.log_btn_register);
-        ButtonRegister.setOnClickListener(new View.OnClickListener() {
+        buttonRegister = findViewById(R.id.log_btn_register);
+        buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent RegisterIntent = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(RegisterIntent);
             }
         });
-        final EditText eName = (EditText) findViewById(R.id.reg_et_email);
-        final EditText epassword = (EditText) findViewById(R.id.log_et_email);
-        final Button btnLogin = (Button) findViewById(R.id.log_btn_login);
-        final Button btnRegister = (Button) findViewById(log_btn_register);
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+
+        //todo: You have declared a onClick listener above(line 25).
+        // what you can do it copy the details here to the initial onCLick method
+
+        /*loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user = eName.getText().toString();
-                String password = epassword.getText().toString();
+                String user = emailEditText.getText().toString();
+                String password = passwordEditText.getText().toString();
 
                 SharedPreferences preferences = getSharedPreferences("MYPREF", MODE_PRIVATE);
                 String userDetails = preferences.getString(user + password + "data", "Username or Password is incorrect");
@@ -56,20 +58,15 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent displayScreen = new Intent(MainActivity.this, Dashboardactivity.class);
                 startActivity(displayScreen);
-                btnRegister.setOnClickListener(new View.OnClickListener() {
+                buttonRegister.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent regScreen = new Intent(MainActivity.this, RegisterActivity.class);
                         startActivity(regScreen);
-
-
                     }
                 });
-
             }
-        });
-
-
+        });*/
     }
 
 }
